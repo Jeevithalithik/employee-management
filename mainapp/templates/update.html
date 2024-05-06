@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={%static "update.css"%}>
+</head>
+<body>
+   <center>
+    
+    <form action="/update" method="POST">
+        {% csrf_token %}
+        <h3>Employee details update page</h3>
+        Filter by id:<input type="text" name="eid"><br><br><br>
+            Select which data want to update:<select name="option">
+            <option value="phone">phone number</option>
+            <option value="email">email</option>
+            <option value="position">position</option>
+            <option value="salary">salary</option>  
+            </select><br><br><br>
+            Update Here:<input type="text" name="value">
+            <input type="submit" value="update">
+            <br><br><br><br><br><br>
+        <table>
+            <tr>
+                <th>EMP ID</th>
+                <th>NAME</th>
+                <th>AGE</th>
+                <th>EMAIL ID</th>
+                <th>PHONE</th>
+                <th>POSITION</th>
+                <th>SALARY</th>
+            </tr>
+            {% for i in datas %}
+            <tr>
+                
+                <td>{{i.eid}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+                    <td>{{i.email}}</td>
+                        <td>{{i.phone}}</td>
+                            <td>{{i.position}}</td>
+                                <td>{{i.salary}}</td>
+               
+
+            </tr>
+            {% endfor %}
+           
+
+        </table></form><br>
+        <form action="home">
+            <a href="home"><input type="submit" value="home"></a>
+        </form>
+    </center> 
+    </body>
+</html>

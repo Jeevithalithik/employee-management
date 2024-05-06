@@ -1,0 +1,15 @@
+body{
+  background-image: url(./desktop-wallpaper-employee-management-systems-consulting-employee.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+h1{
+  font-family: Calibri; 
+  font-size: 25pt;         
+  font-style: normal; 
+  font-weight: bold; 
+  color:rgb(23, 33, 226);
+  text-align: center; 
+  text-decoration: underline;
+}

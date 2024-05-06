@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={%static "edetails.css"%}>
+</head>
+
+<body bgcolor="pink">
+    <h3>Employee Details Registration</h3>
+
+    <form action="/edetails" method="POST">
+        {% csrf_token %}
+        <table align="center" cellpadding = "10">
+            <tr>
+            <td>Employee id:</td>
+            <td><input type="number" name="eid"></td>
+            </tr>   
+            <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+            <td>Age:</td>
+            <td><input type="age" name="age"></td>
+            </tr>
+            <tr>
+              <td>Phone number</td>
+              <td><input type="phone" name="phone"></td>
+            </tr>
+            <tr>
+                <td>Email id:</td>
+                <td><input type="email" name="email"></td>
+            </tr> 
+            <tr>
+                <td>Date of joining:</td>
+                <td><input type="date" name="date"></td>
+            </tr>        
+            <tr>            
+            <td>Position:</td>
+            <td><select name="position" id="position">
+                <option selected>select role</option>
+                <option value="python developer">python developer</option>
+                <option value=".net developer">.net developer</option>
+                <option value="market analyst">market analyst</option>
+                <option value="Testing">Testing</option>
+                
+            </td>
+            </tr>
+            <tr>            
+                <td>Salary:</td>
+                <td><input type="Salary" name="salary"> </td>
+                </tr>
+
+        <tr>
+        <td><input type="submit"></td>
+        <td><a href="all"><input type="button" value="view"></td>
+        <td><a href="home"><input type="button" value="home"></a></td> 
+        </tr>
+    
+        
+</table>
+</form>
+{% block content %}
+    {{name}}
+{% endblock %}  

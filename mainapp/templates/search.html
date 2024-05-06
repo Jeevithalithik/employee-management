@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href={%static "search.css"%}>
+</head>
+<body><center>
+    <form action="/search" method="POST">
+        {% csrf_token %}  
+        <h3>Employee details search page</h3>
+        <select name="option">
+        <option value="eid">ID</option>
+        <option value="name">Name</option>    
+        </select>
+        Id or name wise:<input type="eid" name="value"  placeholder="id/name">
+        <input type="submit" value="search">
+        <a href="home"><input type="button" value="home"></a>
+    </form><br>
+    <table>
+        <tr>
+            <th>Employee id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Phone number</th>
+            <th>Email id</th>
+            <th>Date of joining</th>
+            <th>Position</th>
+            <th>Salary</th>
+        </tr>
+        {% for i  in datas %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+            <td>{{i.phone}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.position}}</td>
+           <td>{{i.salary}}</td>
+        </tr>
+     {% endfor %}
+    </form>
+</body>
+</html>

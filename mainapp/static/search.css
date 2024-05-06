@@ -1,0 +1,18 @@
+body{
+    background: linear-gradient(to right,#3f5efb,#fc466b);
+}
+h3{
+    font-family: Calibri; 
+    font-size: 25pt;         
+    font-style: normal; 
+    font-weight: bold; 
+    color:rgb(228, 58, 58);
+    text-align: center; 
+    text-decoration: underline
+  }
+  table{
+    border-collapse: collapse;
+  }
+  th,td{
+    border: 2px solid rgb(104, 100, 100);
+  }
