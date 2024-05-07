@@ -18,7 +18,7 @@ ul{
     background-color: #333;
 }
 li{
-    float:left;
+    float: left;
 }
 li a{
     display: block;
@@ -30,5 +30,5 @@ li a{
 }
 li a:hover{
     background-color: #a1c068;
-    font-size:5px;
+    font-size:15px;
 }
